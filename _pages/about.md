@@ -8,7 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-##  Medur Rodoshi Aungshu 
 👩‍🔬 I'm a Prospective PhD Student. <br>
 📊 My research interests are **Energy Efficiency and Renewable Energy Integration**.  
 ---
