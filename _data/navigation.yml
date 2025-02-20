@@ -8,9 +8,9 @@ main:
 
    - title: "CV"
     url: /files/CV_Aungshu.pdf
-    
-  - title: "Projects"
-    url: /projects/
+
+   - title: "Publications"
+     url: /publications/
 
   - title: "Accomplishments"
     url: /accomplishments/
@@ -18,8 +18,8 @@ main:
   - title: "Skills"
     url: /skills/
 
-  - title: "Experience"
-    url: /experience/
+  # - title: "Experience"
+  #   url: /experience/
     
     
   # - title: "Publications"
