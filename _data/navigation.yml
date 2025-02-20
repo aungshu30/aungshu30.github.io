@@ -5,12 +5,11 @@
 # prevent it from being included in the site.
 
 main:
-
-   - title: "CV"
+  - title: "CV"
     url: /files/CV_Aungshu.pdf
 
-   - title: "Publications"
-     url: /publications/
+  - title: "Publications"
+    url: /publications/
 
   - title: "Accomplishments"
     url: /accomplishments/
@@ -20,7 +19,6 @@ main:
 
   # - title: "Experience"
   #   url: /experience/
-    
     
   # - title: "Publications"
   #   url: /publications/
