@@ -1,8 +1,8 @@
 
 ---
 layout: archive
-title: "Honors, Awards & Leadership"
-permalink: /honors-leadership/
+title: "Selected Accomplishments"
+permalink: /accomplishments/
 ---
 
 ## Honors & Awards
