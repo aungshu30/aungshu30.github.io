@@ -9,23 +9,36 @@ main:
    - title: "CV"
     url: /files/CV_Aungshu.pdf
     
-  - title: "Publications"
-    url: /publications/
+  - title: "Projects"
+    url: /projects/
 
-  - title: "Talks"
-    url: /talks/    
+  - title: "Accomplishments"
+    url: /accomplishments/
 
-  - title: "Teaching"
-    url: /teaching/    
+  - title: "Skills"
+    url: /skills/
+
+  - title: "Experience"
+    url: /experience/
     
-  - title: "Portfolio"
-    url: /portfolio/
+    
+  # - title: "Publications"
+  #   url: /publications/
+
+  # - title: "Talks"
+  #   url: /talks/    
+
+  # - title: "Teaching"
+  #   url: /teaching/    
+    
+  # - title: "Portfolio"
+  #   url: /portfolio/
         
-  - title: "Blog Posts"
-    url: /year-archive/
+  # - title: "Blog Posts"
+  #   url: /year-archive/
     
-  - title: "CV"
-    url: /cv/
+  # - title: "CV"
+  #   url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
