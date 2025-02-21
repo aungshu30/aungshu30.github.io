@@ -10,12 +10,11 @@ redirect_from:
 
 👩‍🔬 I'm a Prospective PhD Student. <br>
 📊 My research interests are **Energy Efficiency and Renewable Energy Integration**.  
----
 
 ## 🔬 Research Experience   
 
 ### **Optimizing Building Energy Efficiency with Phase Change Materials**  
-For my undergraduate thesis, I worked on analyzing the impact of Phase Change Materials (PCMs) in buildings to improve energy efficiency. Using Design Builder and Energy Plus, I simulated how PCMs behave under different climate conditions in Bangladesh and evaluated how much energy they could help save. The goal was to understand how integrating these materials could reduce power consumption in buildings, making them more sustainable.  
+For my senior-year thesis, I explored how Phase Change Materials (PCMs) can make buildings more energy-efficient. Using Design Builder and Energy Plus, I simulated how these materials react to different climate conditions in Bangladesh and measured their potential to reduce energy consumption. The goal was to see if integrating PCMs could make buildings more sustainable by cutting down on power usage, especially in regions with extreme temperature variations. 
 
 ### **Automated Solar Tracking for Smarter Energy Storage**  
 In my third-year project, I developed an automated single-axis solar tracking system to improve solar panel efficiency. Using Arduino and C++, I built a system that adjusts solar panels to follow the sun for maximum power generation. The project also evaluated how this approach compares to traditional static solar panels in terms of efficiency and battery storage performance.  
