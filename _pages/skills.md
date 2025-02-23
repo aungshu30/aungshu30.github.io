@@ -4,8 +4,6 @@ title: "Technical Skills"
 permalink: /skills/
 ---
 
-## Software & Tools
-
 ## Engineering & Simulation
 - Design Builder
 - Solid Works
