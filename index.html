@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medur Rodoshi Aungshu | Computer Science Researcher</title>
+  <meta name="description" content="Academic portfolio of Medur Rodoshi Aungshu, M.S. Computer Science student at Missouri State University researching Human-Computer Interaction and Human-AI Collaboration.">
+  <meta property="og:title" content="Medur Rodoshi Aungshu">
+  <meta property="og:description" content="M.S. Computer Science student at Missouri State University researching Human-Computer Interaction and Human-AI Collaboration.">
+  <meta property="og:image" content="https://aungshu30.github.io/images/profile_pic.jpg">
+  <meta property="og:url" content="https://aungshu30.github.io">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
+  <link rel="manifest" href="images/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --bg-alt: #F3F4F6;
+      --text: #2D3748;
+      --text-secondary: #5A6577;
+      --heading: #1A2332;
+      --accent: #3B6FA0;
+      --accent-hover: #2C5A85;
+      --accent-light: #E8F0F8;
+      --border: #E2E6EA;
+      --card-radius: 8px;
+      --section-padding: 5rem 0;
+      --container-max: 900px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--heading);
+      line-height: 1.25;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: var(--accent-hover); }
+
+    img { max-width: 100%; height: auto; }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 1.5rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .header-inner {
+      max-width: var(--container-max);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--heading);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 101;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--heading);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* ---- Section Titles ---- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      padding: 8rem 1.5rem 5rem;
+      background: linear-gradient(135deg, #f8f9fc 0%, #eef2f7 50%, #f5f0eb 100%);
+      text-align: center;
+    }
+
+    .hero-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text);
+      max-width: 540px;
+      margin: 0 auto 1.5rem;
+      font-style: italic;
+    }
+
+    .interest-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .chip {
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* ---- About ---- */
+    .about {
+      padding: var(--section-padding);
+    }
+
+    .about-text {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    /* ---- Education ---- */
+    .education {
+      padding: var(--section-padding);
+      background: var(--bg-alt);
+    }
+
+    .timeline {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--accent-light);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--accent-light);
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-heading {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-institution {
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-detail {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    /* ---- Research ---- */
+    .research {
+      padding: var(--section-padding);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-accent-1 { border-top: 3px solid #3B6FA0; }
+    .card-accent-2 { border-top: 3px solid #5B8C6F; }
+    .card-accent-3 { border-top: 3px solid #8B7355; }
+    .card-accent-4 { border-top: 3px solid #7B6B93; }
+
+    .card-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-alt);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    /* ---- Publications ---- */
+    .publications {
+      padding: var(--section-padding);
+      background: var(--bg-alt);
+    }
+
+    .pub-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pub-item {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .pub-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .pub-badge-conference {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .pub-badge-journal {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .pub-title {
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .pub-authors {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-authors strong {
+      color: var(--text);
+    }
+
+    .pub-venue {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    /* ---- Projects ---- */
+    .projects {
+      padding: var(--section-padding);
+    }
+
+    .project-card {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ---- Skills ---- */
+    .skills {
+      padding: var(--section-padding);
+      background: var(--bg-alt);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 1.75rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-chip {
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 20px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* ---- Accomplishments ---- */
+    .accomplishments {
+      padding: var(--section-padding);
+    }
+
+    .accomplishments-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .accomplishments-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+      margin-top: 2.5rem;
+      color: var(--heading);
+    }
+
+    .accomplishments-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .award-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .award-item {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      border-left: 3px solid var(--accent);
+    }
+
+    .award-item-title {
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .award-item-detail {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .activity-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--text);
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .activity-item:last-child { border-bottom: none; }
+
+    .activity-role {
+      font-weight: 600;
+      color: var(--heading);
+      min-width: 160px;
+    }
+
+    .activity-detail {
+      color: var(--text-secondary);
+    }
+
+    /* ---- Industry ---- */
+    .industry {
+      padding: var(--section-padding);
+      background: var(--bg-alt);
+    }
+
+    .industry-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .industry-content p {
+      margin-bottom: 1rem;
+    }
+
+    .facility-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .facility-item {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      color: var(--text);
+    }
+
+    /* ---- Contact ---- */
+    .contact {
+      padding: var(--section-padding);
+    }
+
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-content > p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      fill: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---- Scroll Reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 767px) {
+      :root {
+        --section-padding: 3rem 0;
+      }
+
+      .header { padding: 0 1rem; }
+
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 1.5rem 1.5rem;
+        gap: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        display: none;
+      }
+
+      .nav-links li { border-bottom: 1px solid var(--border); }
+      .nav-links li:last-child { border-bottom: none; }
+
+      .nav-links a {
+        display: block;
+        padding: 0.9rem 0;
+        font-size: 1rem;
+      }
+
+      .nav-open .nav-links { display: flex; }
+
+      .nav-open .nav-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+      .nav-open .nav-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero { padding: 6rem 1.5rem 3rem; }
+      .hero-photo { width: 140px; height: 140px; }
+      .hero h1 { font-size: 1.75rem; }
+      .hero-subtitle { font-size: 0.95rem; }
+      .section-title { font-size: 1.5rem; margin-bottom: 2rem; }
+
+      .card-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .facility-list { grid-template-columns: 1fr; }
+
+      .activity-item {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .activity-role { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <span class="header-name">Medur Rodoshi Aungshu</span>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <img src="images/profile_pic.jpg" alt="Medur Rodoshi Aungshu" class="hero-photo">
+    <h1>Medur Rodoshi Aungshu</h1>
+    <p class="hero-subtitle">M.S. in Computer Science | Graduate Research Assistant | Missouri State University</p>
+    <p class="hero-tagline">Exploring how people and intelligent systems can work better together.</p>
+    <div class="interest-chips">
+      <span class="chip">Human-Computer Interaction</span>
+      <span class="chip">Human-AI Collaboration</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="files/CV_Aungshu.pdf" target="_blank" class="btn btn-primary">View CV</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text reveal">
+        I am a graduate research assistant pursuing my M.S. in Computer Science at Missouri State University, where I focus on Human-Computer Interaction and Human-AI Collaboration. My path into computing grew from an undergraduate foundation in Energy Science and Engineering at KUET, Bangladesh, where I developed a deep appreciation for simulation, data analysis, and systems thinking. I love digging into complex problems, whether that means characterizing memory behavior in LLM inference systems or modeling how materials can make buildings more energy-efficient. I am always curious, always learning, and happiest when I get to build something that solves a real challenge.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="education" id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Fall 2025 to Present</div>
+          <div class="timeline-heading">M.S. in Computer Science</div>
+          <div class="timeline-institution">Missouri State University</div>
+          <div class="timeline-detail">Graduate Research Assistant</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">April 2024</div>
+          <div class="timeline-heading">B.Sc. in Energy Science and Engineering</div>
+          <div class="timeline-institution">Khulna University of Engineering and Technology (KUET), Bangladesh</div>
+          <div class="timeline-detail">CGPA: 3.17/4.00 (3.42 in the last 60 credits)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section class="research" id="research">
+    <div class="container">
+      <h2 class="section-title">Research Experience</h2>
+      <div class="card-grid">
+        <div class="card card-accent-1 reveal">
+          <div class="card-year">2026</div>
+          <h3>Tail Latency Characterization Under Concurrent LLM Inference</h3>
+          <p>Examined how response times in a large language model server degrade as more users send requests simultaneously, especially with very long inputs. Designed a testing framework that captured latency across different concurrency levels, revealing that the slowest responses get hit disproportionately harder as contention increases.</p>
+        </div>
+        <div class="card card-accent-2 reveal">
+          <div class="card-year">2026</div>
+          <h3>KV Cache Memory Scaling in LLM Inference Systems</h3>
+          <p>Investigated how GPU memory usage grows in large language model servers as inputs get longer and more users send requests at the same time. Tracked KV cache usage live through the server's own metrics to understand where memory pressure builds up under real-world conditions.</p>
+        </div>
+        <div class="card card-accent-3 reveal">
+          <div class="card-year">2025</div>
+          <h3>GPU-CPU Memory Transfer Latency Benchmarking</h3>
+          <p>Evaluated data transfer efficiency between CPU and GPU by testing multiple buffer sizes on a production GPU server. Developed a test setup that measured latency in both directions across thousands of iterations, comparing performance when idle and under active CPU load.</p>
+        </div>
+        <div class="card card-accent-4 reveal">
+          <div class="card-year">2023 | Undergraduate Thesis</div>
+          <h3>Thermal Performance of Buildings Integrated with Phase Change Materials</h3>
+          <p>Explored how phase change materials could help keep buildings cooler without active cooling systems. Used DesignBuilder and EnergyPlus to simulate their performance when embedded into roofs of single-story buildings across different climate zones in Bangladesh, measuring energy savings and thermal comfort improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="publications" id="publications">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
+      <div class="pub-list">
+        <div class="pub-item reveal">
+          <span class="pub-badge pub-badge-conference">Conference - Accepted</span>
+          <div class="pub-title">"Numerical Investigation on the Thermal Performance of a Building Integrated with Phase Change Material in the Roof"</div>
+          <div class="pub-authors"><strong>Medur Rodoshi Aungshu</strong>, Dr. Mohammad Ariful Islam</div>
+          <div class="pub-venue">International Conference on Mechanical, Industrial and Materials Engineering (ICMIME 2024), December 11-13, 2024, Rajshahi, Bangladesh. Paper ID: 403</div>
+        </div>
+        <div class="pub-item reveal">
+          <span class="pub-badge pub-badge-journal">Journal - Under Review</span>
+          <div class="pub-title">"Numerical Investigation on the Selection of Energy-Efficient Phase Change Material (PCM) for Building Envelopes in Different Climatic Conditions of Bangladesh"</div>
+          <div class="pub-authors">Haque AF, Hossain MJ, Hossain MM, Shovon MAH, <strong>Aungshu MR</strong>, Galib MR, Alam MM</div>
+          <div class="pub-venue">Energy and Buildings (Under Review)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-card">
+        <div class="card card-accent-2 reveal">
+          <div class="card-year">2022</div>
+          <h3>Automated Single Axis Solar Tracking Based Battery Charging System</h3>
+          <p>Built a solar tracking system using an Arduino microcontroller and C++ that automatically adjusts a solar panel's angle to follow the sun throughout the day. Ran a side-by-side comparison with a standard static panel to measure the efficiency gains, and designed an integrated battery storage setup to optimize how the harvested energy was stored and used.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Programming</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">C</span>
+            <span class="skill-chip">C++</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">MATLAB</span>
+            <span class="skill-chip">Arduino</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Engineering and Simulation</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">Design Builder</span>
+            <span class="skill-chip">SolidWorks</span>
+            <span class="skill-chip">Aspen HYSYS</span>
+            <span class="skill-chip">OriginPro</span>
+            <span class="skill-chip">PCTRAN</span>
+            <span class="skill-chip">Ansys</span>
+            <span class="skill-chip">EES</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Tools and Platforms</h3>
+          <div class="skill-chips">
+            <span class="skill-chip">Microsoft Word</span>
+            <span class="skill-chip">PowerPoint</span>
+            <span class="skill-chip">Excel</span>
+            <span class="skill-chip">Overleaf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accomplishments -->
+  <section class="accomplishments" id="accomplishments">
+    <div class="container">
+      <h2 class="section-title">Accomplishments</h2>
+      <div class="accomplishments-content">
+
+        <h3>Honors and Awards</h3>
+        <ul class="award-list">
+          <li class="award-item reveal">
+            <div class="award-item-title">Merit Scholarships</div>
+            <div class="award-item-detail">Received Merit Scholarships for three semesters in the Department of Energy Science and Engineering at KUET, Bangladesh.</div>
+          </li>
+          <li class="award-item reveal">
+            <div class="award-item-title">Merit Scholarship, S.S.C (10th Grade)</div>
+            <div class="award-item-detail">Awarded for outstanding performance in the Secondary School Certificate examination, Govt. Promothnath Girls' High School, Rajshahi.</div>
+          </li>
+          <li class="award-item reveal">
+            <div class="award-item-title">Senior Member Award</div>
+            <div class="award-item-detail">Recognized as a senior member of the KUET Research Society for contributions to research activities.</div>
+          </li>
+          <li class="award-item reveal">
+            <div class="award-item-title">First Runner-up, Inter Department Sports</div>
+            <div class="award-item-detail">Achieved First Runner-up position in Inter Department Sports at KUET.</div>
+          </li>
+          <li class="award-item reveal">
+            <div class="award-item-title">IELTS Academic</div>
+            <div class="award-item-detail">Band Score: 7.0 | Listening: 8.0 | Reading: 8.5 | Writing: 6.0 | Speaking: 6.0</div>
+          </li>
+        </ul>
+
+        <h3>Leadership and Activities</h3>
+        <ul class="activity-list">
+          <li class="activity-item reveal">
+            <span class="activity-role">KUET Research Society</span>
+            <span class="activity-detail">Member of Departmental Committee of ESE, Executive Committee 2023-2024</span>
+          </li>
+          <li class="activity-item reveal">
+            <span class="activity-role">Volunteer at TRY</span>
+            <span class="activity-detail">Social Service Club of KUET. Hosted 2 workshops and seminars.</span>
+          </li>
+          <li class="activity-item reveal">
+            <span class="activity-role">Dining Manager</span>
+            <span class="activity-detail">Rokeya Hall, KUET. Managed dining operations from March to May 2023.</span>
+          </li>
+          <li class="activity-item reveal">
+            <span class="activity-role">KUET Film Society</span>
+            <span class="activity-detail">Member, acted in 2 short films.</span>
+          </li>
+          <li class="activity-item reveal">
+            <span class="activity-role">ESE Night Organizer</span>
+            <span class="activity-detail">Organized ESE Night 2019 for the Department of Energy Science and Engineering.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Exposure -->
+  <section class="industry" id="industry">
+    <div class="container">
+      <h2 class="section-title">Industry Exposure</h2>
+      <div class="industry-content reveal">
+        <p>In 2022, I completed a one-week attachment program at Khulna Power Company Ltd. (KPCL), where I had the opportunity to visit and study real-world energy facilities:</p>
+        <ul class="facility-list">
+          <li class="facility-item">Khulna Power Company Ltd. (KPCL)</li>
+          <li class="facility-item">Petromax Refinery Limited</li>
+          <li class="facility-item">Bangabandhu Water Treatment Plant, Khulna WASA</li>
+          <li class="facility-item">HAMKO and Abdulla Battery Co. (ABCO)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-content">
+        <p>I am always happy to connect. Feel free to reach out via email or find me on LinkedIn.</p>
+        <div class="contact-links">
+          <a href="mailto:ma672s@missouristate.edu" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            ma672s@missouristate.edu
+          </a>
+          <a href="https://www.linkedin.com/in/medur-rodoshi-aungshu-a75885302/" target="_blank" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn Profile
+          </a>
+          <a href="https://github.com/aungshu30" target="_blank" class="contact-link">
+            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <a href="files/CV_Aungshu.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Medur Rodoshi Aungshu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.getElementById('header');
+      var toggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelectorAll('.nav-links a');
+
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+
+      toggle.addEventListener('click', function() {
+        header.classList.toggle('nav-open');
+      });
+
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          header.classList.remove('nav-open');
+        });
+      });
+
+      var sections = document.querySelectorAll('section[id]');
+      var navObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(link) {
+              link.classList.toggle('active',
+                link.getAttribute('href') === '#' + entry.target.id
+              );
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' });
+
+      sections.forEach(function(s) { navObserver.observe(s); });
+
+      var reveals = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      reveals.forEach(function(el) { revealObserver.observe(el); });
+    })();
+  </script>
+</body>
+</html>
